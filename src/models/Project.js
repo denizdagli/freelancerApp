@@ -16,6 +16,11 @@ const ProjectSchema = new Schema(
       required: true,
       trim: true,
     },
+    img: {
+      type: String,
+      required: true,
+      trim: true,
+    },
   },
   { collection: "Project", timestamps: true }
 );

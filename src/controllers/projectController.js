@@ -1,11 +1,11 @@
 const Project = require("../models/Project");
 const fs = require("fs");
 
-exports.createProject = async (req, res) => {
+exports.addProject = async (req, res) => {
     try {
         const project = new Project(req.body);
         await project.save();
-        res.status(200).json({ message: "Project created successfully" });
+        res.status(200).render("index");
     } catch (error) {
         res.status(500).json({ message: "Error creating project" });
     }

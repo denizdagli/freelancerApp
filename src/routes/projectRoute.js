@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const projectController = require('../controllers/projectController');
 
-router.post('/create', projectController.createProject);
+router.post('/add', projectController.addProject);
 router.get('/get', projectController.getProjects);
 router.get('/get/:id', projectController.getProject);
 router.put('/update/:id', projectController.updateProject);
