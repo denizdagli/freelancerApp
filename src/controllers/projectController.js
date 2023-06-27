@@ -5,7 +5,7 @@ exports.addProject = async (req, res) => {
     try {
         const project = new Project(req.body);
         await project.save();
-        res.status(200).render("index");
+        res.redirect("/#pOrtfolio");
     } catch (error) {
         res.status(500).json({ message: "Error creating project" });
     }

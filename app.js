@@ -1,6 +1,6 @@
 const express = require("express");
 const fileUpload = require("express-fileupload");
-
+const ejs = require("ejs");
 require("dotenv").config();
 require("./src/config/dbConnection");
 const projectRoute = require("./src/routes/projectRoute");
