@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/css/styles.css" rel="stylesheet" />
+       
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -287,10 +288,23 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-xl text-uppercase rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Submit</span></button>
+                                        <button type="submit" class="btn btn-primary btn-xl text-uppercase rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit" onclick="return validateForm()"><span>Submit</span></button>
                                     </div>
                                    
                                     </form>
+                                    <script>
+                                        function validateForm() {
+                                            // Alanların değerlerini al
+                                            var projectName = document.getElementsByName('name')[0].value;
+                                            var projectDescription = document.getElementsByName('description')[0].value;
+                                    
+                                            // Alanların boş olup olmadığını kontrol et
+                                            if (projectName.trim() === '' || projectDescription.trim() === '') {
+                                                alert('Please fill in all fields..');
+                                                return false; // Submit işlemini iptal et
+                                            }
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -298,7 +312,7 @@
                 </div>
             </div>
         </div>
-  
+       
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

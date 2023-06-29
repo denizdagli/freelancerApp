@@ -7,7 +7,7 @@ exports.addProject = async (req, res) => {
         await project.save();
         res.redirect("/#portfolio");
     } catch (error) {
-        res.status(500).send({ message: error});
+        res.status(500).send({ message: "Error occurred while adding project.."});
     }
     }
 
