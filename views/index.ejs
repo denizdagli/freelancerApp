@@ -74,7 +74,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                            <img class="img-fluid" src="<%= projects[i].image %>" alt="..." />
                             <div class="portfolio-item-caption-title text-center text-white"><%= projects[i].name %></div>
                         </div>
                     </div>
@@ -164,13 +164,7 @@
                                     <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            
                         </form>
                     </div>
                 </div>
@@ -237,7 +231,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="<%= projects[i].image %>" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4"><%= projects[i].description %></p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
@@ -268,7 +262,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                <form action="/" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form action="/" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN" enctype="multipart/form-data">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="name" type="text" placeholder="Enter project name..." data-sb-validations="required" />

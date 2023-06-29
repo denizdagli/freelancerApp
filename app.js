@@ -1,5 +1,5 @@
 const express = require("express");
-const fileUpload = require("express-fileupload");
+const fileUpload = require("express-fileupload");//gorsel islemler icin
 const ejs = require("ejs");
 require("dotenv").config();
 require("./src/config/dbConnection");
@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
+
 
 //ROUTES
 app.use("/", projectRoute);
