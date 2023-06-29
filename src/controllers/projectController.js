@@ -5,16 +5,16 @@ exports.addProject = async (req, res) => {
     try {
         const project = new Project(req.body);
         await project.save();
-        res.redirect("/#pOrtfolio");
+        res.redirect("/#portfolio");
     } catch (error) {
-        res.status(500).json({ message: "Error creating project" });
+        res.status(500).send({ message: error});
     }
     }
 
 exports.getProjects = async (req, res) => {
     try {
         const projects = await Project.find();
-        res.status(200).json(projects);
+        res.render("index", { projects: projects });
     } catch (error) {
         res.status(500).json({ message: "Error retrieving projects" });
     }

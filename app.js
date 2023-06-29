@@ -4,6 +4,7 @@ const ejs = require("ejs");
 require("dotenv").config();
 require("./src/config/dbConnection");
 const projectRoute = require("./src/routes/projectRoute");
+const pageRoute = require("./src/routes/pageRoute");
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -17,11 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
 
 //ROUTES
-app.use("/api/project", projectRoute);
-app.get("/", (req, res) => {
-  res.render("index");
-});
-app.get("/api", (req, res) => {
-  res.status(200).json({ message: "Hello World!" });
-});
+app.use("/", projectRoute);
+//app.use("/", pageRoute);
+
+
 app.listen(port, () => console.log(`Listening on port ${port}...`));
