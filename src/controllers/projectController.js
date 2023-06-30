@@ -21,6 +21,7 @@ exports.addProject = async (req, res) => {
       image: "/uploads/" + uploadeImage.name,
     });
     res.redirect("/#portfolio");
+   
   } catch (error) {
     res.status(500).json({ message: "Error occurred while adding project" });
   }

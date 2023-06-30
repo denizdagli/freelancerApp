@@ -234,13 +234,18 @@
                                     <img class="img-fluid rounded mb-5" src="<%= projects[i].image %>" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4"><%= projects[i].description %></p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
+                                   
+                                   
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button" style="float: right;">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
                                     </button>
-                                  
-                                    
+                                    <div class="text-left">
+                                        <a href="/<%= projects[i]._id %>" class="btn btn-primary btn-xl text-uppercase" style="background-color: grey;"><span>Edit</span></a>
+                                    </div> 
                                 </div>
+                                
+                                
                                 
                             </div>
                         </div>
